@@ -92,3 +92,132 @@ Describe your app in numbered steps so a reader can follow along without watchin
 5. <!-- Add more steps as needed -->
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
+
+Output code
+================================================================================
+🐾 PAWPAL+ SYSTEM TEST - Multiple Owners and Pets
+================================================================================
+
+================================================================================
+OWNER 1: JORDAN
+================================================================================
+
+✓ Created Owner: Jordan
+  Available time today: 195 minutes
+  Availability: {'morning': 60, 'afternoon': 90, 'evening': 45}
+
+✓ Added pets to Jordan:
+  - Mochi (Dog, 3 years old)
+  - Max (Cat, 5 years old, ['sensitive stomach'])
+
+📋 Creating tasks for Mochi:
+  ✓ Morning walk (20 min, high priority)
+  ✓ Feed Mochi (10 min, high priority)
+  ✓ Evening walk (20 min, high priority)
+  ✓ Playtime with Mochi (30 min, medium priority)
+  ✓ Training session (15 min, low priority)
+
+📋 Creating tasks for Max:
+  ✓ Clean litter box (10 min, high priority)
+  ✓ Feed Max (5 min, high priority)
+  ✓ Brush Max (15 min, low priority)
+  ✓ Play with Max (20 min, medium priority)
+
+────────────────────────────────────────────────────────────────────────────────
+📅 GENERATING SCHEDULE FOR JORDAN
+────────────────────────────────────────────────────────────────────────────────
+
+Schedule for Jordan:
+
+📍 Mochi:
+  1. Feed Mochi (10 min) - Priority: high
+  2. Morning walk (20 min) - Priority: high
+  3. Evening walk (20 min) - Priority: high
+  4. Playtime with Mochi (30 min) - Priority: medium
+  5. Training session (15 min) - Priority: low
+  Subtotal: 95 minutes
+
+📍 Max:
+  1. Feed Max (5 min) - Priority: high
+  2. Clean litter box (10 min) - Priority: high
+  3. Play with Max (20 min) - Priority: medium
+  4. Brush Max (15 min) - Priority: low
+  Subtotal: 50 minutes
+
+Total tasks: 9
+Total duration: 145 minutes
+Fits available time: Yes
+
+
+================================================================================
+OWNER 2: ALEX
+================================================================================
+
+✓ Created Owner: Alex
+  Available time today: 195 minutes
+  Availability: {'morning': 45, 'afternoon': 60, 'evening': 90}
+
+✓ Added pets to Alex:
+  - Buddy (Dog, 7 years old, ['arthritis'])
+  - Luna (Cat, 2 years old)
+
+📋 Creating tasks for Buddy:
+  ✓ Gentle morning walk (25 min, high priority)
+  ✓ Feed Buddy (10 min, high priority)
+  ✓ Medication (5 min, high priority)
+  ✓ Afternoon nap spot (10 min, medium priority)
+  ✓ Grooming (20 min, low priority)
+
+📋 Creating tasks for Luna:
+  ✓ Feed Luna (5 min, high priority)
+  ✓ Litter box check (5 min, high priority)
+  ✓ Playtime (30 min, high priority)
+  ✓ Window perch time (15 min, low priority)
+
+────────────────────────────────────────────────────────────────────────────────
+📅 GENERATING SCHEDULE FOR ALEX
+────────────────────────────────────────────────────────────────────────────────
+
+Schedule for Alex:
+
+📍 Buddy:
+  1. Medication (5 min) - Priority: high
+  2. Feed Buddy (10 min) - Priority: high
+  3. Gentle morning walk (25 min) - Priority: high
+  4. Afternoon nap spot (10 min) - Priority: medium
+  5. Grooming (20 min) - Priority: low
+  Subtotal: 70 minutes
+
+📍 Luna:
+  1. Feed Luna (5 min) - Priority: high
+  2. Litter box check (5 min) - Priority: high
+  3. Playtime (30 min) - Priority: high
+  4. Window perch time (15 min) - Priority: low
+  Subtotal: 55 minutes
+
+Total tasks: 9
+Total duration: 125 minutes
+Fits available time: Yes
+
+
+================================================================================
+📊 SYSTEM SUMMARY
+================================================================================
+
+Owner 1: Jordan
+  Pets: 2
+  Total tasks: 9
+  Pending tasks: 9
+  Total scheduled time: 145 minutes / 195 available
+  Schedule valid: ✅ YES
+
+Owner 2: Alex
+  Pets: 2
+  Total tasks: 9
+  Pending tasks: 9
+  Total scheduled time: 125 minutes / 195 available
+  Schedule valid: ✅ YES
+
+================================================================================
+✅ TEST COMPLETE!
+================================================================================

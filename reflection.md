@@ -15,7 +15,9 @@
 **b. Design changes**
 
 - Did your design change during implementation?
+- Ans: During implementation I added more relationships such as the owner owns a pet and owner creates a task. 
 - If yes, describe at least one change and why you made it.
+- Ans: I added them so that they have relationships without using scheduler in between. 
 
 ---
 

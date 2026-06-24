@@ -1,47 +1,64 @@
 classDiagram
-    %% PawPal+ System Design
+    %% PawPal+ System Design - Updated to match implementation
     %% Four core classes for pet care scheduling assistant
+
+    class Task {
+        +string title
+        +string description
+        +int duration_minutes
+        +string priority
+        +string category
+        +string frequency
+        +bool is_recurring
+        +bool completed
+        +list tags
+        +string task_id
+        +__init__(title, description, duration_minutes, priority, category)
+        +get_priority_score() int
+        +mark_completed() void
+        +mark_incomplete() void
+        +to_dict() dict
+    }
 
     class Pet {
         +string name
         +string species
         +int age
         +list health_conditions
+        +list tasks
+        +string pet_id
         +__init__(name, species, age, health_conditions)
         +get_care_requirements() list
+        +add_task(task) void
+        +get_all_tasks() list
+        +get_pending_tasks() list
         +to_dict() dict
     }
 
     class Owner {
         +string name
         +dict availability_hours
+        +list pets
         +dict preferences
         +string timezone
+        +string owner_id
         +__init__(name, availability_hours, preferences)
         +get_available_time() int
         +can_complete_task(task, current_time) bool
-        +to_dict() dict
-    }
-
-    class Task {
-        +string title
-        +int duration_minutes
-        +string priority
-        +string category
-        +bool is_recurring
-        +list tags
-        +__init__(title, duration_minutes, priority, category)
-        +get_priority_score() int
+        +add_pet(pet) void
+        +get_pet(pet_id) Pet
+        +get_all_tasks() list
+        +get_all_pending_tasks() list
         +to_dict() dict
     }
 
     class Scheduler {
-        +Pet pet
         +Owner owner
-        +list tasks
         +dict schedule
-        +__init__(pet, owner, tasks)
-        +add_task(task) void
+        +string scheduler_id
+        +__init__(owner)
+        +get_tasks_for_pet(pet_id) list
+        +get_all_pending_tasks() list
         +generate_schedule() dict
         +get_schedule_explanation() string
         +validate_schedule() bool
@@ -50,7 +67,6 @@ classDiagram
 
     %% Relationships
     Owner --> Pet : owns (1..many)
-    Owner --> Task : creates (1..many)
-    Scheduler --> Pet : owns
+    Pet --> Task : contains (1..many)
     Scheduler --> Owner : manages
-    Scheduler --> Task : schedules (1..many)
+    Scheduler --> Task : schedules (via Owner)
