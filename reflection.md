@@ -7,6 +7,11 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+- Three actions
+- user is able to add pet tasks
+- user can set the duration
+- produce an AI-generated plan for the user to increase efficiency
+
 **b. Design changes**
 
 - Did your design change during implementation?

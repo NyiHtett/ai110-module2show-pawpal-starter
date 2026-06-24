@@ -1,0 +1,56 @@
+classDiagram
+    %% PawPal+ System Design
+    %% Four core classes for pet care scheduling assistant
+
+    class Pet {
+        +string name
+        +string species
+        +int age
+        +list health_conditions
+        +__init__(name, species, age, health_conditions)
+        +get_care_requirements() list
+        +to_dict() dict
+    }
+
+    class Owner {
+        +string name
+        +dict availability_hours
+        +dict preferences
+        +string timezone
+        +__init__(name, availability_hours, preferences)
+        +get_available_time() int
+        +can_complete_task(task, current_time) bool
+        +to_dict() dict
+    }
+
+    class Task {
+        +string title
+        +int duration_minutes
+        +string priority
+        +string category
+        +bool is_recurring
+        +list tags
+        +__init__(title, duration_minutes, priority, category)
+        +get_priority_score() int
+        +to_dict() dict
+    }
+
+    class Scheduler {
+        +Pet pet
+        +Owner owner
+        +list tasks
+        +dict schedule
+        +__init__(pet, owner, tasks)
+        +add_task(task) void
+        +generate_schedule() dict
+        +get_schedule_explanation() string
+        +validate_schedule() bool
+        +to_dict() dict
+    }
+
+    %% Relationships
+    Owner --> Pet : owns (1..many)
+    Owner --> Task : creates (1..many)
+    Scheduler --> Pet : owns
+    Scheduler --> Owner : manages
+    Scheduler --> Task : schedules (1..many)
